@@ -4,23 +4,16 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-  # TODO: delete this build job and uncomment the ci-cd job once ready to deploy.
-  build:
-    uses: health-education-england/.github/.github/workflows/build-gradle.yml@main
+  ci-cd:
+    name: Build and deploy
+    uses: health-education-england/.github/.github/workflows/ci-cd-gradle.yml@main
     with:
-      # TODO: delete or set to true depending on codeartifict requirements
+      cluster-prefix: tis
+      java-version: 25
       use-codeartifact: false
     secrets:
       sonar-token: ${{ secrets.SONAR_TOKEN }}
-
-#  ci-cd:
-#    name: Build and deploy
-#    uses: health-education-england/.github/.github/workflows/ci-cd-gradle.yml@main
-#    with:
-#      cluster-prefix: # TODO: add ECS cluster prefix
-#      use-codeartifact: false # TODO: delete or set to true depending on codeartifict requirements
-#    secrets:
-#      sonar-token: ${{ secrets.SONAR_TOKEN }}
-#      reject-pat: ${{ secrets.PAT_REJECT_APPROVALS }}
+      reject-pat: ${{ secrets.PAT_REJECT_APPROVALS }}

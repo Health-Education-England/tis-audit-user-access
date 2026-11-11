@@ -11,7 +11,6 @@ plugins {
   id("org.sonarqube") version "6.2.0.5505"
 }
 
-// TODO: Update group to end with "admin" or "trainee".
 group = "uk.nhs.tis"
 version = "0.0.1"
 
@@ -61,8 +60,7 @@ sonarqube {
     property("sonar.host.url", "https://sonarcloud.io")
     property("sonar.login", System.getenv("SONAR_TOKEN"))
     property("sonar.organization", "health-education-england")
-    // TODO: Update sonar.projectKey to real value.
-    property("sonar.projectKey", "Health-Education-England_tis-microservice-template")
+    property("sonar.projectKey", "Health-Education-England_tis-audit-user-access")
 
     property("sonar.java.checkstyle.reportPaths",
       "build/reports/checkstyle/main.xml,build/reports/checkstyle/test.xml")

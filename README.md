@@ -1,65 +1,31 @@
-# TIS Microservice Template
+# TIS Audit User Access
 
 ## About
-This is a template to be used for TIS microservices with the following
-technology:
 
- - Java 25
- - Spring Boot
- - Gradle
- - JUnit 5
+A service for holding and providing aggregated information about users' accessing TIS data.
 
-Boilerplate code is to be generated with:
- - Lombok
- - MapStruct
+## Technology
+
+- Java 25
+- Spring Boot
+- Gradle
+- JUnit 5
+
+Boilerplate code is generated with Lombok and MapStruct.
 
 Code quality checking and enforcement is done with the following tools:
- - EditorConfig
- - Checkstyle
- - JaCoCo
- - SonarQube
 
-Error and exception logging is done using Sentry.
+- EditorConfig
+- Checkstyle
+- JaCoCo
+- SonarQube
 
-## TODO
-To use this template, create a new repository from it and follow the TODOs in
-the code, with the following additional changes.
- - Update copyright year in [LICENSE](LICENSE).
- - Update copyright year in [TemplateApplication].
- - Update copyright year in [TemplateApplicationTest].
- - Update this README.
- - Sentry:
-    - Set up Sentry project.
-    - Provide `SENTRY_DSN` and `SENTRY_ENVIRONMENT` as environmental variables
-   during deployment.
- - Sonar:
-    - Add repository to SonarCloud.
-    - Add SonarCloud API key to repository secrets.
- - Update the references to `tis-template` and port number in [task-definition].
- - Update the `CODEOWNERS` file to reflect the correct owning teams for the new service.
+## Local development
 
-## CODEOWNERS Examples
-
-Below are example teams and patterns you can use when updating the `CODEOWNERS` file.
-Replace the placeholders with the appropriate backend and DevOps teams.
-
-- Backend teams:
-  - @Health-Education-England/external-admin-backend
-  - @Health-Education-England/internal-admin-backend
-  - @Health-Education-England/trainee-backend
-  - @Health-Education-England/trainee
-- DevOps teams:
-  - @Health-Education-England/external-admin-devops
-  - @Health-Education-England/internal-admin-devops
-  - @Health-Education-England/trainee-devops
-  - @Health-Education-England/ops
-
-## Versioning
-This project uses [Semantic Versioning](semver.org).
+Run the application with `./gradlew bootRun` and run the test suite with
+`./gradlew test`. The service listens on port `8098` with context path
+`/useraccess`.
 
 ## License
-This project is license under [The MIT License (MIT)](LICENSE).
 
-[task-definition]: .aws/task-definition-template.json
-[TemplateApplication]: src/main/java/uk/nhs/hee/tis/template/TemplateApplication.java
-[TemplateApplicationTest]: src/test/java/uk/nhs/hee/tis/template/TemplateApplicationTest.java
+This project is licensed under the [MIT License](LICENSE).
