@@ -8,7 +8,7 @@ plugins {
   checkstyle
   jacoco
   // App monitoring and reporting
-  id("org.sonarqube") version "7.5.0.8588"
+  id("org.sonarqube") version "7.6.0.18749"
 }
 
 // TODO: Update group to end with "admin" or "trainee".
