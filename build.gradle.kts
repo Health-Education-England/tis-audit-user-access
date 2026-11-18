@@ -3,7 +3,7 @@ plugins {
   id("org.springframework.boot") version "4.1.2"
   id("io.spring.dependency-management") version "1.1.7"
 
-  id("io.sentry.jvm.gradle") version "6.26.0"
+  id("io.sentry.jvm.gradle") version "6.27.0"
   // Code quality plugins
   checkstyle
   jacoco
