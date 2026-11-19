@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright 2022 Crown Copyright (Health Education England)
+ * Copyright 2026 Crown Copyright (NHS England)
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
  * associated documentation files (the "Software"), to deal in the Software without restriction,
@@ -21,15 +21,19 @@
 
 package uk.nhs.hee.tis.template;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootTest
-//TODO: Update package and class name.
-class TemplateApplicationTest {
+/**
+ * TODO: Update package and class name and add a description.
+ */
+@SpringBootApplication
+public class AuditUserAccessApp {
 
-  @Test
-  void contextLoads() {
-
+  /**
+   * Main method to run the Spring Boot application.
+   */
+  public static void main(String[] args) {
+    SpringApplication.run(AuditUserAccessApp.class);
   }
 }
