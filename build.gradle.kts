@@ -30,6 +30,8 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-starter-webmvc")
   testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
 
+  implementation("org.springframework.boot:spring-boot-data-commons")  // DB tech is not decided yet
+
   // Lombok
   compileOnly("org.projectlombok:lombok")
   annotationProcessor("org.projectlombok:lombok")
