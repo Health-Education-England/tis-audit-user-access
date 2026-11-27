@@ -53,8 +53,9 @@ import uk.nhs.tis.audit.useraccess.dto.LastAccessDto;
 
 /**
  * Tests for {@link LogsResource}.
- * <p>They currently test framework usage more than the resource itself.  As the resource is developed,
- * they should be re-evaluated and likely replaced with tests of our own code.
+ *
+ * <p>They currently test framework usage more than the resource itself.  As the resource is
+ * developed, they should be re-evaluated and likely replaced with tests of our own code.
  */
 @WebMvcTest(LogsResource.class)
 @ActiveProfiles("test")

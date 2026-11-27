@@ -20,6 +20,30 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
+      description: |
+        OAuth 2 access token for a service account, obtained from the authorization server
+        using the client credentials grant and sent as `Authorization: Bearer <access-token>`.
+        The token must be a signed JWT from the configured issuer, include this API's audience
+        and grant the scope listed in each operation's security requirement.
+
+  headers:
+    WWW-Authenticate:
+      description: The bearer authentication challenge defined by RFC 6750.
+      schema:
+        type: string
+      example: Bearer error="insufficient_scope", error_description="The request requires higher privileges than provided by the access token."
+
+  responses:
+    Unauthorized:
+      description: No valid access token was provided.
+      headers:
+        WWW-Authenticate:
+          $ref: '#/components/headers/WWW-Authenticate'
+    Forbidden:
+      description: The access token is valid but does not grant the scope required by the operation.
+      headers:
+        WWW-Authenticate:
+          $ref: '#/components/headers/WWW-Authenticate'
 
   schemas:
     LastAccess:

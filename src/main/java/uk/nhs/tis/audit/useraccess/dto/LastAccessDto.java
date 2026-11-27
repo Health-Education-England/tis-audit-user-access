@@ -18,10 +18,14 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+
 package uk.nhs.tis.audit.useraccess.dto;
 
 import java.time.OffsetDateTime;
 
+/**
+ * The minimal DTO provided by a system providing access to data.
+ */
 public record LastAccessDto(String email, OffsetDateTime accessDateTime) {
 
 }

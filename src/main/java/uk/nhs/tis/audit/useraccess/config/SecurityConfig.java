@@ -18,6 +18,7 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+
 package uk.nhs.tis.audit.useraccess.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
@@ -31,6 +32,9 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * Security configuration for the application.
+ */
 @Configuration
 public class SecurityConfig {
 
@@ -39,7 +43,8 @@ public class SecurityConfig {
     return http
         // Authentication uses only bearer headers, never cookies or browser login.
         .csrf(AbstractHttpConfigurer::disable)
-        .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+        .sessionManagement(
+            session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authorizeHttpRequests(authorize -> authorize
             // Preserve the original failure status on internal error dispatches.
             .dispatcherTypeMatchers(DispatcherType.ERROR).permitAll()
