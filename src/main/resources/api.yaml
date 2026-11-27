@@ -110,13 +110,10 @@ paths:
         '200':
           description: A notification that the last access information was successfully submitted.
           content:
-            application/json:
+            text/plain:
               schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    example: Last access information submitted successfully.
+                type: string
+                example: Last access information submitted successfully.
         '400':
           description: Bad Request - The request body is invalid or missing required fields.
           content:

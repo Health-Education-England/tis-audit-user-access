@@ -49,6 +49,7 @@ public class SecurityConfig {
             // Preserve the original failure status on internal error dispatches.
             .dispatcherTypeMatchers(DispatcherType.ERROR).permitAll()
             .requestMatchers(HttpMethod.GET, "/api/logs").hasAuthority("SCOPE_read:all:tbd")
+            .requestMatchers(HttpMethod.HEAD, "/api/logs").hasAuthority("SCOPE_read:all:tbd")
             .requestMatchers(HttpMethod.POST, "/api/logs").hasAuthority("SCOPE_write:all:tbd")
             .anyRequest().authenticated())
         .oauth2ResourceServer(resourceServer -> resourceServer.jwt(withDefaults()))
