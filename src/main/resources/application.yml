@@ -8,6 +8,13 @@ spring:
     web:
       pageable:
         max-page-size: 100
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${OAUTH2_ISSUER_URI}
+          audiences:
+            - ${OAUTH2_AUDIENCE}
 
 sentry:
   dsn: ${SENTRY_DSN:}
