@@ -67,7 +67,7 @@ paths:
       description: |
         This endpoint allows clients to retrieve paginated last access information.
       security:
-        - BearerAuth: []
+        - BearerAuth: [TBC]
       parameters:
         - in: query
           name: page
@@ -79,7 +79,7 @@ paths:
           name: size
           schema:
             type: integer
-            default: 10
+            default: 20
             maximum: 100
           description: The number of records per page.
       responses:
@@ -97,7 +97,7 @@ paths:
         This endpoint allows clients to submit an array of user last access information. 
         Each entry in the array should contain details about a user's last access to TIS data across systems.
       security:
-        - BearerAuth: []
+        - BearerAuth: [TBC]
       requestBody:
         required: true
         content:
