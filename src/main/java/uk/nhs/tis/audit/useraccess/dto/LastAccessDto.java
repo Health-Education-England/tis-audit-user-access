@@ -19,19 +19,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package uk.nhs.hee.tis.useraccess;
+package uk.nhs.tis.audit.useraccess.dto;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.time.OffsetDateTime;
 
-/** Spring Boot application for the TIS Audit User Access service. */
-@SpringBootApplication
-public class UserAccessApplication {
+/**
+ * The minimal DTO provided by a system providing access to data.
+ */
+public record LastAccessDto(String email, OffsetDateTime accessDateTime) {
 
-  /**
-   * Main method to run the Spring Boot application.
-   */
-  static void main(String[] args) {
-    SpringApplication.run(UserAccessApplication.class, args);
-  }
 }

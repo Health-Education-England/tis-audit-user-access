@@ -1,0 +1,9 @@
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://foo-issuer.tis.nhs.uk
+          audiences:
+            - foo-test
